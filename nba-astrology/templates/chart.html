@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>NBA ASTROLOGY</title>
+    </head>
+
+    <body>
+    <form action="/chart" method="GET">
+        <p>
+            lat:<br>
+            <input name="lat_">
+        </p>
+
+        <p>
+            lon:<br>
+            <input name="lon_">
+            
+        </p>
+
+        <p>
+            date (utc):<br>
+            <input name="date_">
+        </p>
+
+        <p>
+            time (utc):<br>
+            <input name="time_">
+        </p>
+
+        <input type="submit">
+    </form>
+    
+    {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+    {% endfor %}
+
+</body>
+</html>

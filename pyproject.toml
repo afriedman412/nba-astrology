@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "nba-astrology"
+version = "0.1.0"
+description = ""
+authors = ["Andy Friedman <afriedman412@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+flatlib = "^0.2.3"
+dateparser = "^1.1.0"
+pandas = "^1.4.0"
+pytz = "^2021.3"
+requests = "^2.27.1"
+geopy = "^2.2.0"
+Flask = "^2.0.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

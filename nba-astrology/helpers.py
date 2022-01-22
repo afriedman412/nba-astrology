@@ -4,15 +4,17 @@ from flatlib import aspects
 from flatlib.datetime import Datetime
 from flatlib.geopos import GeoPos
 from flatlib.chart import Chart
-from gsheetstools import gSheet
+# from gsheetstools import gSheet
 import dateparser
 import pandas as pd
 import pytz
 
 class chart_class:
-    def __init__(self):
-        g = gSheet("1_N8EcUpiwhHnl43BDY3p3jeVUFkNtcbZCMUlpusGuEY", suffix='af412')
-        self.arenas = g.loadDataFromSheet("arenas").set_index('Arena').to_dict('index')
+    def __init__(self, arenas=True):
+        if arenas:
+            from gsheetstools import gSheet
+            g = gSheet("1_N8EcUpiwhHnl43BDY3p3jeVUFkNtcbZCMUlpusGuEY", suffix='af412')
+            self.arenas = g.loadDataFromSheet("arenas").set_index('Arena').to_dict('index')
 
     def loadChart(self, game):
         """
