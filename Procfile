@@ -1,1 +1,1 @@
-web: gunicorn ./nba-astrology/app.py:app
+web: gunicorn app.py:app

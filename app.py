@@ -1,7 +1,11 @@
+import sys
+sys.path.append ("./nba-astrology/")
+
 from flask import Flask, request, render_template
 from helpers import *
 import json
 import pandas as pd
+
 
 app = Flask(__name__)
 
