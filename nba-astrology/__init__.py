@@ -1,0 +1,1 @@
+from nba_astrology import app
