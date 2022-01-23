@@ -30,11 +30,13 @@
 
         <input type="submit">
     </form>
-    
+    <center>
+
     {% for table in tables %}
             {{titles[loop.index]}}
             {{ table|safe }}
     {% endfor %}
+    </center>
 
 </body>
 </html>

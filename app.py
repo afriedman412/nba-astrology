@@ -22,11 +22,13 @@ def chart():
         }
 
     c.loadChart(game)
-    answers = c.readChart()
-    df = pd.DataFrame({'hey':answers})
+    df = pd.DataFrame({f'House {k}':formatHouse(v) for k, v in c.houses.items()})
     return render_template(
         'chart.html',  
-        tables=[df.to_html(classes='data')], 
+        tables=[
+            pd.DataFrame(c.angles).to_html(),
+            df.to_html(classes='data')
+            ], 
         titles=df.columns.values
         )
 

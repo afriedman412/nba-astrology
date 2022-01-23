@@ -148,4 +148,22 @@ class chart_class:
         return answers
 
 
+def splitAspects(aspects):
+    out_ = {}
+    for a, data in aspects.items():
+        aspect_out = {
+            f'{a}_{k}': None for k in ['type', 'orb', 'separation']
+        }
+        if data:
+            aspect_out = {
+                f'{a}_{k}': v for k,v in data.items()
+            } 
+        out_.update(aspect_out)
         
+    return out_
+
+def formatHouse(house):
+    house_ = {k:v for k,v in house.items() if k not in ['aspects', 'object']}
+    house_.update(splitAspects(house['aspects']))
+    house_['planets_in_house'] = ', '.join(house_['planets_in_house'])
+    return house_
